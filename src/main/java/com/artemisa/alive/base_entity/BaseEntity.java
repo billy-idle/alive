@@ -1,4 +1,4 @@
-package com.artemisa.alive.domain;
+package com.artemisa.alive.base_entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
