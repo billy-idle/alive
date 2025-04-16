@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
-@EntityScan("com.artemisa.alive.domain")
-@EnableJpaRepositories("com.artemisa.alive.repos")
+@EntityScan("com.artemisa.alive")
+@EnableJpaRepositories("com.artemisa.alive")
 @EnableTransactionManagement
 @EnableJpaAuditing(dateTimeProviderRef = "auditingDateTimeProvider")
 public class DomainConfig {

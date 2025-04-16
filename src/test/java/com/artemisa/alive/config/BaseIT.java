@@ -1,14 +1,18 @@
 package com.artemisa.alive.config;
 
 import com.artemisa.alive.AliveApplication;
+import com.artemisa.alive.user.UserRepository;
 import io.restassured.RestAssured;
 import jakarta.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.SqlMergeMode;
 import org.springframework.util.StreamUtils;
 import org.testcontainers.containers.PostgreSQLContainer;
 
@@ -23,6 +27,8 @@ import org.testcontainers.containers.PostgreSQLContainer;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @ActiveProfiles("it")
+@Sql("/data/clearAll.sql")
+@SqlMergeMode(SqlMergeMode.MergeMode.MERGE)
 public abstract class BaseIT {
 
     @ServiceConnection
@@ -35,6 +41,9 @@ public abstract class BaseIT {
 
     @LocalServerPort
     public int serverPort;
+
+    @Autowired
+    public UserRepository userRepository;
 
     @PostConstruct
     public void initRestAssured() {
