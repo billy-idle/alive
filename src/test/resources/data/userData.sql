@@ -1,4 +1,4 @@
-INSERT INTO "user" (
+INSERT INTO users (
     id,
     name,
     date_created,
@@ -10,7 +10,7 @@ INSERT INTO "user" (
     '2024-09-02 14:30:00'
 );
 
-INSERT INTO "user" (
+INSERT INTO users (
     id,
     name,
     date_created,
