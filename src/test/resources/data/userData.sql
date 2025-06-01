@@ -5,7 +5,7 @@ INSERT INTO users (
     last_updated
 ) VALUES (
     1100,
-    'Sed diam voluptua.',
+    'Zed diam voluptua.',
     '2024-09-02 14:30:00',
     '2024-09-02 14:30:00'
 );

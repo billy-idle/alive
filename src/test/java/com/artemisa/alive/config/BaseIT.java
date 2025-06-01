@@ -32,7 +32,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 public abstract class BaseIT {
 
     @ServiceConnection
-    private static final PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:17.4");
+    private static final PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:17.5");
 
     static {
         postgreSQLContainer.withReuse(true)

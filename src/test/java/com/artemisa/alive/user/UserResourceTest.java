@@ -51,7 +51,7 @@ public class UserResourceTest extends BaseIT {
                     .get("/api/users/1100")
                 .then()
                     .statusCode(HttpStatus.OK.value())
-                    .body("name", Matchers.equalTo("Sed diam voluptua."));
+                    .body("name", Matchers.equalTo("Zed diam voluptua."));
     }
 
     @Test
